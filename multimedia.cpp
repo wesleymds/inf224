@@ -5,6 +5,9 @@ using namespace std;
 
 /**
  * @brief Multimedia::Multimedia
+ * @param name Nom
+ * @param acquisition_date  Date d'aquisition
+ * @param path_name Nom du fichier
  */
 Multimedia::Multimedia(string name, float acquisition_date, string path_name){
     this->name = name;
@@ -44,7 +47,7 @@ string Multimedia::getPath_name() const{
 
 /**
  * @brief Multimedia::setName
- * @param Nom
+ * @param name Nom
  */
 void Multimedia::setName(string name){
     this->name = name;
@@ -52,7 +55,7 @@ void Multimedia::setName(string name){
 
 /**
  * @brief Multimedia::setAcquisition_date
- * @param Date d'aquisition
+ * @param acquisition_date Date d'aquisition
  */
 void Multimedia::setAcquisition_date(float acquisition_date){
     this->acquisition_date = acquisition_date;
@@ -60,7 +63,7 @@ void Multimedia::setAcquisition_date(float acquisition_date){
 
 /**
  * @brief Multimedia::setPath_name
- * @param Nom du fichier
+ * @param path_name Nom du fichier
  */
 void Multimedia::setPath_name(string path_name){
     this->path_name = path_name;
