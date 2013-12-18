@@ -8,8 +8,17 @@ using namespace std;
 class Multimedia
 {
 private:
+    /**
+     * @brief name Nom de l'objet multimedia
+     */
     string name;
+    /**
+     * @brief acquisition_date Date d'acquisition de l'objet multimedia
+     */
     float acquisition_date;
+    /**
+     * @brief path_name Nom du fichier associé à l'objet multimédia
+     */
     string path_name;
 
 public:
