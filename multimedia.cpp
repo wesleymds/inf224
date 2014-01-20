@@ -5,6 +5,12 @@ using namespace std;
 
 /**
  * @brief Multimedia::Multimedia
+ */
+Multimedia::Multimedia()
+{}
+
+/**
+ * @brief Multimedia::Multimedia
  * @param name Nom
  * @param acquisition_date  Date d'aquisition
  * @param path_name Nom du fichier

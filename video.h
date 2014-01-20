@@ -1,7 +1,9 @@
 #ifndef VIDEO_H
 #define VIDEO_H
 
-class Video
+#include "multimedia.h"
+
+class Video : public Multimedia
 {
 private:
     /**
@@ -10,11 +12,12 @@ private:
     float duration;
 public:
     Video();
-    Video(string duration);
+    Video(float duration, string name, float acquisition_date, string path_name);
     virtual ~Video();
 
-    virtual string getDuration() const;
-    virtual void setDuration(string duration);
+    virtual float getDuration() const;
+    virtual void setDuration(float duration);
+    virtual void showMultimedia() const;
 };
 
 #endif // VIDEO_H
