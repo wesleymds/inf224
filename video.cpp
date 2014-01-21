@@ -12,6 +12,9 @@ Video::Video()
 /**
  * @brief Video::Video
  * @param duration Durée
+ * @param name Nom
+ * @param acquisition_date Date d'aquisition
+ * @param path_name Nom du fichier
  */
 Video::Video(float duration, string name, float acquisition_date, string path_name) : Multimedia(name, acquisition_date, path_name)
 {
@@ -41,7 +44,7 @@ void Video::setDuration(float duration){
 }
 
 /**
- * @brief Video::showMultimedia Aflicher la valeur des attributs de l'objet multimedia
+ * @brief Video::showMultimedia Méthode d'affichage
  */
 void Video::showMultimedia() const{
     Multimedia::showMultimedia();

@@ -12,7 +12,7 @@ Multimedia::Multimedia()
 /**
  * @brief Multimedia::Multimedia
  * @param name Nom
- * @param acquisition_date  Date d'aquisition
+ * @param acquisition_date Date d'aquisition
  * @param path_name Nom du fichier
  */
 Multimedia::Multimedia(string name, float acquisition_date, string path_name){
@@ -76,7 +76,7 @@ void Multimedia::setPath_name(string path_name){
 }
 
 /**
- * @brief Multimedia::showMultimedia Aflicher la valeur des attributs de l'objet multimedia
+ * @brief Multimedia::showMultimedia Méthode d'affichage
  */
 void Multimedia::showMultimedia() const{
     cout << this->name << this->acquisition_date << this->path_name << endl;
