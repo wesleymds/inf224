@@ -57,6 +57,7 @@ string Multimedia::getPath_name() const{
  */
 void Multimedia::setName(string name){
     this->name = name;
+    return;
 }
 
 /**
@@ -65,6 +66,7 @@ void Multimedia::setName(string name){
  */
 void Multimedia::setAcquisition_date(float acquisition_date){
     this->acquisition_date = acquisition_date;
+    return;
 }
 
 /**
@@ -73,11 +75,13 @@ void Multimedia::setAcquisition_date(float acquisition_date){
  */
 void Multimedia::setPath_name(string path_name){
     this->path_name = path_name;
+    return;
 }
 
 /**
  * @brief Multimedia::showMultimedia Méthode d'affichage
  */
 void Multimedia::showMultimedia() const{
-    cout << this->name << this->acquisition_date << this->path_name << endl;
+    cout << this->name << " " << this->acquisition_date << " " << this->path_name << endl;
+    return;
 }

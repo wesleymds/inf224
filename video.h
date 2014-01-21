@@ -17,7 +17,7 @@ public:
 
     virtual float getDuration() const;
     virtual void setDuration(float duration);
-    virtual void showMultimedia() const;
+    virtual void showVideo() const;
 };
 
 #endif // VIDEO_H

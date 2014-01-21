@@ -30,12 +30,9 @@ Film::~Film(){
  * @brief Film::getChapters_info
  * @return Tableau de durées et le nombre de chapitres
  */
-string Film::getChapters_info() const{
-    string info = to_string(this->number_chapters);
-    for(int i; i<this->number_chapters; i++){
-        info.append(to_string(this->chapters_duration[i]));
-    }
-    return info;
+const int* Film::getChapters_info() const
+{
+    return this->chapters_duration;
 }
 
 /**
@@ -43,17 +40,21 @@ string Film::getChapters_info() const{
  * @param chapters_duration Tableau de durées
  */
 void Film::setChapters_duration(int* chapters_duration){
-    for(int i; i<this->number_chapters; i++){
+    for(int i = 0; i<this->number_chapters; i++){
         this->chapters_duration[i] = chapters_duration[i];
     }
+
+    return;
 }
 
 /**
  * @brief Film::showFilm Méthode d'affichage
  */
 void Film::showFilm() const{
-    for(int i; i<this->number_chapters; i++){
-        cout << this->chapters_duration[i] << "\n";
+    for(int i = 0; i<this->number_chapters; i++){
+        cout << this->chapters_duration[i] << " ";
     }
     cout << endl;
+
+    return;
 }

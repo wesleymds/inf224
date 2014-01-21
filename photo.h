@@ -21,7 +21,7 @@ public:
 
     virtual string getPlace() const;
     virtual void setPlace(string place);
-    virtual void showMultimedia() const;
+    virtual void showPhoto() const;
 };
 
 #endif // PHOTO_H

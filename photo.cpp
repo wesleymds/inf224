@@ -41,14 +41,16 @@ string Photo::getPlace() const{
  */
 void Photo::setPlace(string place){
     this->place = place;
+    return;
 }
 
 /**
- * @brief Photo::showMultimedia Aflicher la valeur des attributs de l'objet multimedia
+ * @brief Photo::showPhoto Méthode d'affichage
  */
-void Photo::showMultimedia() const{
+void Photo::showPhoto() const{
     Multimedia::showMultimedia();
     cout << this->place << endl;
+    return;
 }
 
 

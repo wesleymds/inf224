@@ -2,6 +2,7 @@
 #include "multimedia.h"
 #include "photo.h"
 #include "video.h"
+#include "film.h"
 
 using namespace std;
 
@@ -12,8 +13,9 @@ int main(int argc, char** argv) {
     m->showMultimedia();
     */
 
+    /*
     Multimedia** tab = new Multimedia*[10];
-    unsigned int count = 0;
+    int count = 0;
 
     tab[count++] = new Photo("Brésil", "m1" , 1, "path1");
     tab[count++] = new Video(1, "m2" , 2, "path2");
@@ -21,6 +23,21 @@ int main(int argc, char** argv) {
     for (int k = 0; k < count; k++) {
         tab[k]->showMultimedia();
     }
+    */
+
+    Film* f = new Film(10);
+    int* tab = new int[10];
+    int count = 0;
+
+    tab[count++] = 1;
+    tab[count++] = 2;
+    tab[count++] = 3;
+
+    f->setChapters_duration(tab);
+
+    f->showFilm();
 
     delete (tab);
+
+    f->showFilm();
 }

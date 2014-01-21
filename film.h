@@ -1,6 +1,8 @@
 #ifndef FILM_H
 #define FILM_H
 
+#include "video.h"
+
 class Film : public Video
 {
 private:
@@ -18,7 +20,7 @@ public:
     Film(int number_chapters);
     virtual ~Film();
 
-    virtual string getChapters_info() const;
+    virtual const int* getChapters_info() const;
     virtual void setChapters_duration(int* chapters_duration);
     virtual void showFilm() const;
 };

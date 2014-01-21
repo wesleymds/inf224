@@ -41,12 +41,14 @@ float Video::getDuration() const{
  */
 void Video::setDuration(float duration){
     this->duration = duration;
+    return;
 }
 
 /**
  * @brief Video::showMultimedia Méthode d'affichage
  */
-void Video::showMultimedia() const{
+void Video::showVideo() const{
     Multimedia::showMultimedia();
     cout << this->duration << endl;
+    return;
 }
