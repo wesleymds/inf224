@@ -1,8 +1,8 @@
-#include <string>
-#include <stdlib.h>
-
 #ifndef MULTIMEDIA_H
 #define MULTIMEDIA_H
+
+#include <string>
+#include <stdlib.h>
 
 using namespace std;
 

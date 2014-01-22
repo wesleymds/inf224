@@ -6,8 +6,8 @@ using namespace std;
 /**
  * @brief Film::Film
  */
-Film::Film()
-{}
+Film::Film() : Video(){
+}
 
 /**
  * @brief Film::Film
@@ -17,8 +17,8 @@ Film::Film()
  * @param acquisition_date Date d'aquisition
  * @param path_name Nom du fichier
  */
-Film::Film(int number_chapters, float duration, string name, float acquisition_date, string path_name) : Video(duration, name, acquisition_date, path_name)
-{
+Film::Film(int number_chapters, float duration, string name, float acquisition_date,
+           string path_name) : Video(duration, name, acquisition_date, path_name){
     this->chapters_duration = new int[number_chapters];
     this->number_chapters = number_chapters;
 }

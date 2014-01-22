@@ -6,8 +6,8 @@ using namespace std;
 /**
  * @brief Photo::Photo
  */
-Photo::Photo()
-{}
+Photo::Photo() : Multimedia(){
+}
 
 /**
  * @brief Photo::Photo

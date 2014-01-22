@@ -6,7 +6,7 @@ using namespace std;
 /**
  * @brief Video::Video
  */
-Video::Video(){
+Video::Video() : Multimedia(){
 }
 
 /**

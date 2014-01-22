@@ -3,6 +3,7 @@
 #include "photo.h"
 #include "video.h"
 #include "film.h"
+#include "group.h"
 
 using namespace std;
 
@@ -25,7 +26,7 @@ int main(int argc, char** argv) {
     }
     */
 
-    Film* f = new Film(10, 1, "m2" , 2, "path2");
+    /*Film* f = new Film(10, 1, "m2" , 2, "path2");
     int* tab = new int[10];
     int count = 0;
 
@@ -40,4 +41,20 @@ int main(int argc, char** argv) {
     delete (tab);
 
     f->showMultimedia();
+    */
+
+    Multimedia* m1 = new Photo("Brésil", "m1" , 1, "path1");
+    Multimedia* m2 = new Video(1, "m2" , 2, "path2");
+
+    Group g;
+    g.push_back(m1);
+    g.push_back(m2);
+    g.showGroup();
+
+    Group g2;
+    g2.push_back(m2);
+    g2.showGroup();
+
+    delete(m1);
+    delete(m2);
 }
