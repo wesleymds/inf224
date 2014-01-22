@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
     }
     */
 
-    Film* f = new Film(10);
+    Film* f = new Film(10, 1, "m2" , 2, "path2");
     int* tab = new int[10];
     int count = 0;
 
@@ -35,9 +35,9 @@ int main(int argc, char** argv) {
 
     f->setChapters_duration(tab);
 
-    f->showFilm();
+    f->showMultimedia();
 
     delete (tab);
 
-    f->showFilm();
+    f->showMultimedia();
 }

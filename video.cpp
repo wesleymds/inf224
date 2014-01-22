@@ -6,8 +6,8 @@ using namespace std;
 /**
  * @brief Video::Video
  */
-Video::Video()
-{}
+Video::Video(){
+}
 
 /**
  * @brief Video::Video
@@ -16,8 +16,7 @@ Video::Video()
  * @param acquisition_date Date d'aquisition
  * @param path_name Nom du fichier
  */
-Video::Video(float duration, string name, float acquisition_date, string path_name) : Multimedia(name, acquisition_date, path_name)
-{
+Video::Video(float duration, string name, float acquisition_date, string path_name) : Multimedia(name, acquisition_date, path_name){
     this->duration = duration;
 }
 
@@ -47,8 +46,21 @@ void Video::setDuration(float duration){
 /**
  * @brief Video::showMultimedia Méthode d'affichage
  */
-void Video::showVideo() const{
+void Video::showMultimedia() const{
     Multimedia::showMultimedia();
     cout << this->duration << endl;
+    return;
+}
+
+/**
+ * @brief Video::playMultimedia Jouer
+ */
+void Video::playMultimedia() const{
+    string path_name(this->getPath_name());
+    string name(this->getName());
+    string player("mplayer ");
+    string parameter(" &");
+    string command = player + path_name + name + parameter;
+    system(command.c_str());
     return;
 }

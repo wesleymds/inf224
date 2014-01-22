@@ -45,12 +45,24 @@ void Photo::setPlace(string place){
 }
 
 /**
- * @brief Photo::showPhoto Méthode d'affichage
+ * @brief Photo::showMultimedia Méthode d'affichage
  */
-void Photo::showPhoto() const{
+void Photo::showMultimedia() const{
     Multimedia::showMultimedia();
     cout << this->place << endl;
     return;
 }
 
+/**
+ * @brief Photo::playMultimedia Afficher
+ */
+void Photo::playMultimedia() const{
+    string path_name(this->getPath_name());
+    string name(this->getName());
+    string player("mspaint ");
+    string parameter(" &");
+    string command = player + path_name + name + parameter;
+    system(command.c_str());
+    return;
+}
 

@@ -17,12 +17,13 @@ private:
 
 public:
     Film();
-    Film(int number_chapters);
+    Film(int number_chapters, float duration, string name, float acquisition_date, string path_name);
     virtual ~Film();
 
     virtual const int* getChapters_info() const;
-    virtual void setChapters_duration(int* chapters_duration);
-    virtual void showFilm() const;
+    virtual void setChapters_duration(const int* chapters_duration);
+    virtual void showMultimedia() const;
+    virtual void playMultimedia() const;
 };
 
 #endif // FILM_H

@@ -1,4 +1,5 @@
 #include <string>
+#include <stdlib.h>
 
 #ifndef MULTIMEDIA_H
 #define MULTIMEDIA_H
@@ -33,6 +34,7 @@ public:
     virtual void setAcquisition_date(float acquisition_date);
     virtual void setPath_name(string path_name);
     virtual void showMultimedia() const;
+    virtual void playMultimedia() const = 0;
 };
 
 #endif // MULTIMEDIA_H
