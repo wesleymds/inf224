@@ -25,6 +25,7 @@ Multimedia::Multimedia(string name, float acquisition_date, string path_name){
  * @brief Multimedia::~Multimedia
  */
 Multimedia::~Multimedia(){
+    cout << this->getName() << endl;
 }
 
 /**

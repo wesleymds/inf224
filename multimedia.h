@@ -1,12 +1,16 @@
 #ifndef MULTIMEDIA_H
 #define MULTIMEDIA_H
 
+//#define SMART_PTR_DEBUG_MESSAGES
+//#define SMART_PTR_DEBUG
+
 #include <string>
 #include <stdlib.h>
+#include "intrusive_ptr.h"
 
 using namespace std;
 
-class Multimedia
+class Multimedia : public Pointable
 {
 private:
     /**
