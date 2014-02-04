@@ -1,9 +1,11 @@
+#include <tr1/memory>
 #include <iostream>
 #include "multimedia.h"
 #include "photo.h"
 #include "video.h"
 #include "film.h"
 #include "group.h"
+
 
 using namespace std;
 
@@ -43,6 +45,7 @@ int main(int argc, char** argv) {
     f->showMultimedia();
     */
 
+    /*
     Multimedia* m1 = new Photo("Brésil", "m1" , 1, "path1");
     Multimedia* m2 = new Video(1, "m2" , 2, "path2");
 
@@ -57,4 +60,35 @@ int main(int argc, char** argv) {
 
     delete(m1);
     delete(m2);
+    */
+
+    /*
+    intrusive_ptr<Multimedia> m1 = new Photo("Brésil", "m1" , 1, "path1");
+    intrusive_ptr<Multimedia> m2 = new Video(1, "m2" , 2, "path2");
+
+    intrusive_ptr<Group> g = new Group();
+
+    g->push_back(m1);
+    g->push_back(m2);
+
+    g->showGroup();
+
+    g->remove(m1);
+
+    m1 = NULL;
+
+    g->remove(m2);
+
+    m2 = NULL;
+
+    g->showGroup();
+
+    g = NULL;
+    */
+
+    shared_ptr<Multimedia> m1 = new Photo("Brésil", "m1" , 1, "path1");
+    shared_ptr<Multimedia> m2 = new Video(1, "m2" , 2, "path2");
+
+    shared_ptr<Group> g = new Group();
+
 }

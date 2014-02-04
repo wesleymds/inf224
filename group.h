@@ -1,17 +1,17 @@
 #ifndef GROUP_H
 #define GROUP_H
 
-//#define SMART_PTR_DEBUG_MESSAGES
-//#define SMART_PTR_DEBUG
-
+#include <tr1/memory>
 #include <list>
 #include <string>
 #include "multimedia.h"
 #include "intrusive_ptr.h"
 
+
+using std::tr1::shared_ptr;
 using namespace std;
 
-class Group : public list<intrusive_ptr<Multimedia> >, public Pointable
+class Group : public list<shared_ptr<Multimedia> >
 {
 private:
     /**
