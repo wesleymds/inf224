@@ -3,6 +3,9 @@
 
 #include "video.h"
 
+/**
+ * @brief The Film class
+ */
 class Film : public Video
 {
 private:

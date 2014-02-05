@@ -3,6 +3,9 @@
 
 #include "multimedia.h"
 
+/**
+ * @brief The Video class
+ */
 class Video : public Multimedia
 {
 private:

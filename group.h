@@ -11,6 +11,9 @@
 
 using namespace std;
 
+/**
+ * @brief The Group class
+ */
 class Group : public list<intrusive_ptr<Multimedia> >, public Pointable
 {
 private:

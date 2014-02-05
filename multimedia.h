@@ -10,6 +10,9 @@
 
 using namespace std;
 
+/**
+ * @brief The Multimedia class
+ */
 class Multimedia : public Pointable
 {
 private:

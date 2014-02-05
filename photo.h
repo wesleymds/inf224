@@ -5,6 +5,9 @@
 
 using namespace std;
 
+/**
+ * @brief The Photo class
+ */
 class Photo : public Multimedia
 {
 private:
