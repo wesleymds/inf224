@@ -8,16 +8,21 @@
  */
 class Video : public Multimedia
 {
+
+friend class BD;
+
 private:
     /**
      * @brief duration Durée
      */
     float duration;
-public:
+
+protected:
     Video();
     Video(float duration, string name, float acquisition_date, string path_name);
     virtual ~Video();
 
+public:
     virtual float getDuration() const;
     virtual void setDuration(float duration);
     virtual void showMultimedia() const;

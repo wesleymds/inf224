@@ -15,6 +15,9 @@ using namespace std;
  */
 class Multimedia : public Pointable
 {
+
+friend class BD;
+
 private:
     /**
      * @brief name Nom de l'objet multimedia
@@ -29,11 +32,12 @@ private:
      */
     string path_name;
 
-public:
+protected:
     Multimedia();
     Multimedia(string name, float acquisition_date, string path_name);
     virtual ~Multimedia();
 
+public:
     virtual string getName() const;
     virtual float getAcquisition_date() const;
     virtual string getPath_name() const;

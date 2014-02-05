@@ -21,8 +21,10 @@ BD::~BD(){
  * @param path_name
  * @return
  */
-intrusive_ptr<Multimedia> BD::createPhoto(string place, string name, float acquisition_date, string path_name){
-    return this->multimedias[name] = new Photo(place, name , acquisition_date, path_name);
+intrusive_ptr<Photo> BD::createPhoto(string place, string name, float acquisition_date, string path_name){
+    intrusive_ptr<Photo> p = new Photo(place, name , acquisition_date, path_name);
+    this->multimedias[name] = p;
+    return p;
 }
 
 /**
@@ -33,8 +35,10 @@ intrusive_ptr<Multimedia> BD::createPhoto(string place, string name, float acqui
  * @param path_name
  * @return
  */
-intrusive_ptr<Multimedia> BD::createVideo(float duration, string name, float acquisition_date, string path_name){
-    return this->multimedias[name] = new Video(duration, name, acquisition_date, path_name);
+intrusive_ptr<Video> BD::createVideo(float duration, string name, float acquisition_date, string path_name){
+    intrusive_ptr<Video> v = new Video(duration, name, acquisition_date, path_name);
+    this->multimedias[name] = v;
+    return v;
 }
 
 /**
@@ -46,8 +50,10 @@ intrusive_ptr<Multimedia> BD::createVideo(float duration, string name, float acq
  * @param path_name
  * @return
  */
-intrusive_ptr<Multimedia> BD::createFilm(int number_chapters, float duration, string name, float acquisition_date, string path_name){
-    return this->multimedias[name] = new Film(number_chapters, duration, name, acquisition_date, path_name);
+intrusive_ptr<Film> BD::createFilm(int number_chapters, float duration, string name, float acquisition_date, string path_name){
+    intrusive_ptr<Film> f = new Film(number_chapters, duration, name, acquisition_date, path_name);
+    this->multimedias[name] = f;
+    return f;
 }
 
 /**
@@ -64,9 +70,10 @@ intrusive_ptr<Group> BD::createGroup(string name){
  * @param name
  */
 void BD::deleteMultimedia(string name){
-    intrusive_ptr<Multimedia> m = this->multimedias.find(name);
-    for (map<string, intrusive_ptr<Group> >::iterator it = this->groups.begin(); it != this->groups.end(); ++it)
-        it->remove(m);
+    map<string, intrusive_ptr<Multimedia> >::const_iterator m = this->multimedias.find(name);
+    for (map<string, intrusive_ptr<Group> >::const_iterator it = this->groups.begin(); it != this->groups.end(); ++it)
+        (it->second)->remove(m->second);
+    this->multimedias.erase(name);
 }
 
 /**
@@ -82,8 +89,8 @@ void BD::deleteGroup(string name){
  * @param name
  */
 void BD::searchMultimedia(string name) const{
-    intrusive_ptr<Multimedia> m = this->multimedias.find(name);
-    m->showMultimedia();
+    map<string, intrusive_ptr<Multimedia> >::const_iterator m = this->multimedias.find(name);
+    (m->second)->showMultimedia();
 }
 
 /**
@@ -91,9 +98,9 @@ void BD::searchMultimedia(string name) const{
  * @param name
  */
 void BD::searchGroup(string name) const{
-    intrusive_ptr<Group> g = this->groups.find(name);
-    g->getName();
-    g->showGroup();
+    map<string, intrusive_ptr<Group> >::const_iterator g = this->groups.find(name);
+    cout << (g->second)->getName() << endl;
+    (g->second)->showGroup();
 }
 
 /**
@@ -101,6 +108,6 @@ void BD::searchGroup(string name) const{
  * @param name
  */
 void BD::playMultimedia(string name) const{
-    intrusive_ptr<Multimedia> m = this->multimedias.find(name);
-    m->playMultimedia();
+    map<string, intrusive_ptr<Multimedia> >::const_iterator m = this->multimedias.find(name);
+    (m->second)->playMultimedia();
 }

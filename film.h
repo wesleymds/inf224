@@ -8,6 +8,9 @@
  */
 class Film : public Video
 {
+
+friend class BD;
+
 private:
     /**
      * @brief chapters_duration Tableau d'entiers contenant la durée de chaque chapitre
@@ -17,12 +20,11 @@ private:
      * @brief nb_chapters Nombre de chapitres
      */
     int number_chapters;
-
-public:
     Film();
     Film(int number_chapters, float duration, string name, float acquisition_date, string path_name);
     virtual ~Film();
 
+public:
     virtual const int* getChapters_info() const;
     virtual void setChapters_duration(const int* chapters_duration);
     virtual void showMultimedia() const;

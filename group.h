@@ -16,16 +16,20 @@ using namespace std;
  */
 class Group : public list<intrusive_ptr<Multimedia> >, public Pointable
 {
+
+friend class BD;
+
 private:
     /**
      * @brief name Nom du groupe
      */
     string name;
-
-public:
     Group();
     Group(string name);
     virtual ~Group();
+
+public:
+
     virtual string getName() const;
     virtual void showGroup() const;
 };

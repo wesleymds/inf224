@@ -3,6 +3,10 @@
 
 #include <map>
 #include "multimedia.h"
+#include "photo.h"
+#include <iostream>
+#include "video.h"
+#include "film.h"
 #include "group.h"
 
 using namespace std;
@@ -24,9 +28,9 @@ private:
 public:
    BD();
    virtual ~BD();
-   virtual intrusive_ptr<Multimedia> createPhoto(string place, string name, float acquisition_date, string path_name);
-   virtual intrusive_ptr<Multimedia> createVideo(float duration, string name, float acquisition_date, string path_name);
-   virtual intrusive_ptr<Multimedia> createFilm(int number_chapters, float duration, string name, float acquisition_date, string path_name);
+   virtual intrusive_ptr<Photo> createPhoto(string place, string name, float acquisition_date, string path_name);
+   virtual intrusive_ptr<Video> createVideo(float duration, string name, float acquisition_date, string path_name);
+   virtual intrusive_ptr<Film> createFilm(int number_chapters, float duration, string name, float acquisition_date, string path_name);
    virtual intrusive_ptr<Group> createGroup(string name);
    virtual void deleteMultimedia(string name);
    virtual void deleteGroup(string name);

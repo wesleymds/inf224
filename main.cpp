@@ -4,6 +4,7 @@
 #include "video.h"
 #include "film.h"
 #include "group.h"
+#include "bd.h"
 
 using namespace std;
 
@@ -60,6 +61,7 @@ int main(int argc, char** argv) {
     delete(m2);
     */
 
+    /*
     intrusive_ptr<Multimedia> m1 = new Photo("Brésil", "m1" , 1, "path1");
     intrusive_ptr<Multimedia> m2 = new Video(1, "m2" , 2, "path2");
 
@@ -70,5 +72,29 @@ int main(int argc, char** argv) {
     m1 = NULL;
     m2 = NULL;
     g = NULL;
+    */
+
+    BD* bd = new BD();
+
+    intrusive_ptr<Multimedia> m1 = bd->createPhoto("Brésil", "m1" , 1, "path1");
+    bd->createVideo(1, "m2" , 2, "path2");
+
+    bd->searchMultimedia("m1");
+
+    bd->deleteMultimedia("m2");
+
+    intrusive_ptr<Group> g = bd->createGroup("g");
+
+    g->push_back(m1);
+
+    bd->searchGroup("g");
+
+    bd->deleteGroup("g");
+
+    bd->searchMultimedia("m1");
+
+    bd->deleteMultimedia("m1");
+
+
 
 }
