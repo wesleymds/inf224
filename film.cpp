@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include "film.h"
 
 using namespace std;
@@ -53,14 +54,16 @@ void Film::setChapters_duration(const int* chapters_duration){
 /**
  * @brief Film::showMultimedia Méthode d'affichage
  */
-void Film::showMultimedia() const{
-    Video::showMultimedia();
+string Film::showMultimedia() const{
+    stringstream info;
+    info << "Durée des chapitres: [";
     for(int i = 0; i<this->number_chapters; i++){
-        cout << this->chapters_duration[i] << " ";
+        info << this->chapters_duration[i] << " ";
+        //cout << this->chapters_duration[i] << " ";
     }
-    cout << endl;
-
-    return;
+    info << "] " << Video::showMultimedia();
+    //cout << endl;
+    return info.str();
 }
 
 /**
@@ -69,8 +72,8 @@ void Film::showMultimedia() const{
 void Film::playMultimedia() const{
     string path_name(this->getPath_name());
     string name(this->getName());
-    string player("mplayer ");
-    string parameter(" &");
+    string player("open -a VLC ");
+    string parameter("");
     string command = player + path_name + name + parameter;
     system(command.c_str());
     return;

@@ -8,7 +8,7 @@
 PROG=inf224
 
 # Fichiers sources (NE PAS METTRE les .h mais seulement les .cpp)
-SOURCES=multimedia.cpp main.cpp photo.cpp video.cpp film.cpp group.cpp bd.cpp
+SOURCES=multimedia.cpp main.cpp photo.cpp video.cpp film.cpp group.cpp bd.cpp TCPServer.cpp Socket.cpp
 
 # Fichiers objets (ne pas modifier, sauf si l'extension n'est pas .cpp)
 OBJETS=${SOURCES:%.cpp=%.o}
@@ -29,7 +29,7 @@ LDFLAGS=
 
 # Librairies a utiliser
 # Exemple pour Qt: LDLIBS = -L/usr/local/qt/lib -lqt
-LDLIBS= 
+LDLIBS= -lpthread
 
 
 ##########################################

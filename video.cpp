@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include "video.h"
 
 using namespace std;
@@ -46,10 +47,11 @@ void Video::setDuration(float duration){
 /**
  * @brief Video::showMultimedia Méthode d'affichage
  */
-void Video::showMultimedia() const{
-    Multimedia::showMultimedia();
-    cout << this->duration << endl;
-    return;
+string Video::showMultimedia() const{
+    stringstream info;
+    info << this->duration << " " << Multimedia::showMultimedia();
+    //cout << this->duration << endl;
+    return info.str();
 }
 
 /**
@@ -58,8 +60,8 @@ void Video::showMultimedia() const{
 void Video::playMultimedia() const{
     string path_name(this->getPath_name());
     string name(this->getName());
-    string player("mplayer ");
-    string parameter(" &");
+    string player("open -a VLC ");
+    string parameter("");
     string command = player + path_name + name + parameter;
     system(command.c_str());
     return;

@@ -34,7 +34,7 @@ public:
    virtual intrusive_ptr<Group> createGroup(string name);
    virtual void deleteMultimedia(string name);
    virtual void deleteGroup(string name);
-   virtual void searchMultimedia(string name) const;
+   virtual string searchMultimedia(string name) const;
    virtual void searchGroup(string name) const;
    virtual void playMultimedia(string name) const;
 };

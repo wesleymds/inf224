@@ -5,6 +5,7 @@
 #include "film.h"
 #include "group.h"
 #include "bd.h"
+#include "TCPServer.h"
 
 using namespace std;
 
@@ -74,6 +75,7 @@ int main(int argc, char** argv) {
     g = NULL;
     */
 
+    /*
     BD* bd = new BD();
 
     intrusive_ptr<Multimedia> m1 = bd->createPhoto("Brésil", "m1" , 1, "path1");
@@ -95,6 +97,15 @@ int main(int argc, char** argv) {
 
     bd->deleteMultimedia("m1");
 
+    */
 
+    BD* bd = new BD();
+
+    bd->createPhoto("Brésil", "neve_photo.jpg" , 1, "/Users/Wesley/Desktop/");
+    bd->createVideo(1, "neve_video.mp4" , 2, "/Users/Wesley/Desktop/");
+
+    TCPServer* s = new TCPServer(bd);
+
+    s->run(3331);
 
 }

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include "photo.h"
 
 using namespace std;
@@ -47,10 +48,11 @@ void Photo::setPlace(string place){
 /**
  * @brief Photo::showMultimedia Méthode d'affichage
  */
-void Photo::showMultimedia() const{
-    Multimedia::showMultimedia();
-    cout << this->place << endl;
-    return;
+string Photo::showMultimedia() const{
+    stringstream info;
+    info << this->place << " " << Multimedia::showMultimedia();
+    //cout << this->place << endl;
+    return info.str();
 }
 
 /**
@@ -59,8 +61,9 @@ void Photo::showMultimedia() const{
 void Photo::playMultimedia() const{
     string path_name(this->getPath_name());
     string name(this->getName());
-    string player("mspaint ");
-    string parameter(" &");
+    // for MAC users
+    string player("open -a Preview ");
+    string parameter("");
     string command = player + path_name + name + parameter;
     system(command.c_str());
     return;

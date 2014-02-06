@@ -74,6 +74,7 @@ void BD::deleteMultimedia(string name){
     for (map<string, intrusive_ptr<Group> >::const_iterator it = this->groups.begin(); it != this->groups.end(); ++it)
         (it->second)->remove(m->second);
     this->multimedias.erase(name);
+    return;
 }
 
 /**
@@ -82,15 +83,16 @@ void BD::deleteMultimedia(string name){
  */
 void BD::deleteGroup(string name){
     this->groups.erase(name);
+    return;
 }
 
 /**
  * @brief BD::searchMultimedia
  * @param name
  */
-void BD::searchMultimedia(string name) const{
+string BD::searchMultimedia(string name) const{
     map<string, intrusive_ptr<Multimedia> >::const_iterator m = this->multimedias.find(name);
-    (m->second)->showMultimedia();
+    return (m->second)->showMultimedia();
 }
 
 /**
@@ -101,6 +103,7 @@ void BD::searchGroup(string name) const{
     map<string, intrusive_ptr<Group> >::const_iterator g = this->groups.find(name);
     cout << (g->second)->getName() << endl;
     (g->second)->showGroup();
+    return;
 }
 
 /**
@@ -110,4 +113,5 @@ void BD::searchGroup(string name) const{
 void BD::playMultimedia(string name) const{
     map<string, intrusive_ptr<Multimedia> >::const_iterator m = this->multimedias.find(name);
     (m->second)->playMultimedia();
+    return;
 }
