@@ -81,11 +81,18 @@ void Multimedia::setPath_name(string path_name){
 }
 
 /**
- * @brief Multimedia::showMultimedia Méthode d'affichage
+ * @brief Multimedia::getMultimedia
+ * @return
  */
-string Multimedia::showMultimedia() const{
+string Multimedia::getMultimedia() const{
     stringstream info;
     info << this->name + " " << this->acquisition_date << " " << this->path_name << endl;
     return info.str();
-    //cout << this->name << " " << this->acquisition_date << " " << this->path_name << endl;
+}
+
+/**
+ * @brief Multimedia::showMultimedia Méthode d'affichage
+ */
+void Multimedia::showMultimedia() const{
+    cout << this->getMultimedia() << endl;
 }

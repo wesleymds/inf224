@@ -44,7 +44,8 @@ public:
     virtual void setName(string name);
     virtual void setAcquisition_date(float acquisition_date);
     virtual void setPath_name(string path_name);
-    virtual string showMultimedia() const;
+    virtual string getMultimedia() const;
+    virtual void showMultimedia() const;
     virtual void playMultimedia() const = 0;
 };
 

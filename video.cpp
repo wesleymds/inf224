@@ -45,13 +45,20 @@ void Video::setDuration(float duration){
 }
 
 /**
+ * @brief Video::getMultimedia
+ * @return
+ */
+string Video::getMultimedia() const{
+    stringstream info;
+    info << this->duration << " " << Multimedia::getMultimedia();
+    return info.str();
+}
+
+/**
  * @brief Video::showMultimedia Méthode d'affichage
  */
-string Video::showMultimedia() const{
-    stringstream info;
-    info << this->duration << " " << Multimedia::showMultimedia();
-    //cout << this->duration << endl;
-    return info.str();
+void Video::showMultimedia() const{
+    cout << this->getMultimedia() << endl;
 }
 
 /**

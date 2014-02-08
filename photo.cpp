@@ -46,13 +46,20 @@ void Photo::setPlace(string place){
 }
 
 /**
+ * @brief Photo::getMultimedia
+ * @return
+ */
+string Photo::getMultimedia() const{
+    stringstream info;
+    info << this->place << " " << Multimedia::getMultimedia();
+    return info.str();
+}
+
+/**
  * @brief Photo::showMultimedia Méthode d'affichage
  */
-string Photo::showMultimedia() const{
-    stringstream info;
-    info << this->place << " " << Multimedia::showMultimedia();
-    //cout << this->place << endl;
-    return info.str();
+void Photo::showMultimedia() const{
+    cout << this->getMultimedia() << endl;
 }
 
 /**

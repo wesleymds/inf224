@@ -52,18 +52,24 @@ void Film::setChapters_duration(const int* chapters_duration){
 }
 
 /**
- * @brief Film::showMultimedia Méthode d'affichage
+ * @brief Film::getMultimedia
+ * @return
  */
-string Film::showMultimedia() const{
+string Film::getMultimedia() const{
     stringstream info;
     info << "Durée des chapitres: [";
     for(int i = 0; i<this->number_chapters; i++){
         info << this->chapters_duration[i] << " ";
-        //cout << this->chapters_duration[i] << " ";
     }
-    info << "] " << Video::showMultimedia();
-    //cout << endl;
+    info << "] " << Video::getMultimedia();
     return info.str();
+}
+
+/**
+ * @brief Film::showMultimedia Méthode d'affichage
+ */
+void Film::showMultimedia() const{
+    cout << this->getMultimedia() << endl;
 }
 
 /**

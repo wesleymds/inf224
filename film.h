@@ -27,7 +27,8 @@ private:
 public:
     virtual const int* getChapters_info() const;
     virtual void setChapters_duration(const int* chapters_duration);
-    virtual string showMultimedia() const;
+    virtual string getMultimedia() const;
+    virtual void showMultimedia() const;
     virtual void playMultimedia() const;
 };
 

@@ -25,7 +25,8 @@ private:
 public:
     virtual string getPlace() const;
     virtual void setPlace(string place);
-    virtual string showMultimedia() const;
+    virtual string getMultimedia() const;
+    virtual void showMultimedia() const;
     virtual void playMultimedia() const;
 };
 

@@ -25,7 +25,8 @@ protected:
 public:
     virtual float getDuration() const;
     virtual void setDuration(float duration);
-    virtual string showMultimedia() const;
+    virtual string getMultimedia() const;
+    virtual void showMultimedia() const;
     virtual void playMultimedia() const;
 };
 
